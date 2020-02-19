@@ -1,5 +1,5 @@
-import axios from './node_modules/axios';
-import Infra from './Infra';
+import axios from 'axios';
+import Infra from '../Services/Infra/Requester/index';
 import Models from './Models';
 
 export default () => {

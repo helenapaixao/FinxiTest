@@ -1,4 +1,4 @@
-import reduceGifObjects from './mappers/reduceGifObjects';
+import reduceGifObjects from './mappers/reduceGifObject';
 
 export default ({ request }) => {
   async function getTrendingGifs() {
