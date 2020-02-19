@@ -37,9 +37,11 @@
       <button class="delete" aria-label="close" v-on:click="isShowModal = false"></button>
     </header>
     <section class="modal-card-body">
-   <img :src="gifData.avatar_url"/>
-   {{gifData.images}}
-   teste
+ <img
+        class="image"
+        :src="gifData.downsampledUrl"
+        :alt="gifData.title"
+      />
     </section>
     <footer class="modal-card-foot">
       <button class="button" v-on:click="isShowModal = false">Fechar</button>
