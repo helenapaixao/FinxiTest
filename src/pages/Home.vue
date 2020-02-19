@@ -1,38 +1,59 @@
 <template>
-  <div>
-    <Hero/>
-    <section class="section searched-gifs-container">
-      <h1 class="title is-4">Procurando o gif</h1>
+  <div class="homepage">
+    <Hero v-model="keyword" />
+
+    <section v-if="keyword" class="section searched-gifs-container">
+      <h1 class="title is-4">Procurando por: {{ keyword }}</h1>
+      <GifsList :gifs="searchedGifs" />
     </section>
-    <section>
-      <h1>Gifs que podem salvar o mundo</h1>
+
+    <section v-else class="section trend-gifs-container">
+      <h1 class="title is-4">Gifs mais populares</h1>
+      <GifsList :gifs="trendGifs" />
     </section>
   </div>
 </template>
 
 <script>
-import Hero from '@/components/Hero.vue'
+import { mapGetters, mapActions } from 'vuex';
+import Hero from '@/components/Hero.vue';
+import GifsList from '@/components/GifsList.vue';
+
 export default {
   name: 'home',
   components: {
-    Hero
+    Hero,
+    GifsList,
   },
 
   async created() {
-
+    await this.fetchTrendingGifs();
   },
 
   data() {
-
+    return {
+      keyword: '',
+    };
   },
+
   watch: {
-
+    keyword() {
+      this.searchGifs(this.keyword);
+    },
   },
+
   computed: {
-
+    ...mapGetters({
+      searchedGifs: 'SearchedGifsStore/getGifs',
+      trendGifs: 'TrendGifsStore/getGifs',
+    }),
   },
-  methods: {
 
+  methods: {
+    ...mapActions({
+      fetchTrendingGifs: 'TrendGifsStore/fetchTrendingGifs',
+      searchGifs: 'SearchedGifsStore/searchGifs',
+    }),
   },
 };
 </script>

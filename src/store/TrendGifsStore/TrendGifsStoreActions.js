@@ -1,9 +1,12 @@
-export default({gifsApi}) => {
-  async function fetchTrendingGifs({commit}) {
+  
+export default ({ gifsApi }) => {
+  async function fetchTrendingGifs({ commit }) {
     const gifs = await gifsApi.getTrendingGifs();
-    commit('setGifs',gifs);
+
+    commit('setGifs', gifs);
   }
+
   return {
     fetchTrendingGifs,
-  }
-}
+  };
+};
