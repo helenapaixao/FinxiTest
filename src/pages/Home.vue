@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Hero v-model="keyword"/>
-    <section v-if="keyword" class="section searched-gifs-container">
+    <Hero/>
+    <section class="section searched-gifs-container">
       <h1 class="title is-4">Procurando o gif</h1>
     </section>
     <section>
@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import Hero from '@/components/Hero.vue'
 export default {
   name: 'home',
   components: {
