@@ -3,6 +3,6 @@
     <router-view/>
   </div>
 </template>
-<style>
+<style lang="scss">
 @import '~bulma/bulma.sass';
 </style>
