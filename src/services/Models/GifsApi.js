@@ -22,7 +22,18 @@ export default ({ request }) => {
 
     return null;
   }
+//   async function deleteGifs(gif) {
+//     try{
+      
+//     }
+//     this.$http.delete('http://localhost:3000/cars/' + id)
+//     .then(() => {              
+//         commit('DELETE_CAR', id)
+//     })
+// }
 
+//       return null;
+//   }
   return {
     getTrendingGifs,
     searchGifs,

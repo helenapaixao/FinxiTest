@@ -8,7 +8,7 @@
     </section>
 
     <section v-else class="section trend-gifs-container">
-      <h1 class="title is-4">Gifs mais populares</h1>
+      <h1 class="title is-4">Gifs mais poderosos</h1>
       <GifsList :gifs="trendGifs" />
     </section>
   </div>

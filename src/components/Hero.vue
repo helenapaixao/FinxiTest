@@ -6,7 +6,7 @@
           <div class="navbar-brand">
             <a class="navbar-item">
               <img src="@/assets/logo.svg" alt="Logo">
-              <h1>Maior buscador de gif do mundo</h1>
+              <h1>Em Busca do Gif mais poderoso</h1>
             </a>
           </div>
           <div id="navbarMenuHeroB" class="navbar-menu">
