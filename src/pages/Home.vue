@@ -24,6 +24,7 @@ export default {
   components: {
     Hero,
     GifsList,
+
   },
 
   async created() {

@@ -29,7 +29,7 @@
               <img class="image" :src="gifData.downsampledUrl" :alt="gifData.title" />
             </section>
             <footer class="modal-card-foot">
-              <button class="button" v-on:click="isShowModal = false">Fechar</button>
+             <button class="button" v-on:click="isShowModal = false">Fechar</button>
             </footer>
           </div>
         </div>
@@ -66,6 +66,12 @@ export default {
       setTimeout(() => {
         this.wasCopied = false;
       }, 1000);
+    },
+    saveToFavorite(id) {
+      this.$store.commit('addToFavourite',id);
+    },
+    removeToFavorite(id) {
+      this.$store.commit('removeFromFavorite',id);
     }
   }
 };
